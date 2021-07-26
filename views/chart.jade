@@ -1,0 +1,50 @@
+doctype html
+
+
+
+html
+    head
+        meta(charset='utf-8')
+        style.
+               body {
+               box-sizing: border-box;
+               font-family: Consolas, monospace;
+               }
+               .jb-wrap {
+               padding: 100px 0px;
+               }
+               h1 {
+               padding: 14px 0px;
+               background-color: #20283E;
+               text-align: center;
+               color: #ffffff;
+               }
+
+        title temp data
+        script(src='https://cdn.jsdelivr.net/npm/chart.js')
+    body
+      h1= p_id
+
+
+
+      button(onclick='history.back();') 👈 Back
+      div
+          canvas#myChart
+      script.
+          var ctx = document.getElementById('myChart').getContext("2d");
+          var temp_data= !{temp};
+          var date_data= !{date};
+          var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: date_data,
+              datasets: [{
+                label: 'patient !{p_id} temp',
+                data: temp_data,
+                borderColor: [
+                    '#20283E'
+                ],
+                borderWidth: 0.1
+              }]
+            }
+          })

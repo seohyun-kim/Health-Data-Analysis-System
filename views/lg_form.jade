@@ -1,0 +1,101 @@
+doctype html
+
+html
+  head
+    meta(charset='utf-8')
+    style.
+           body {
+           box-sizing: border-box;
+           font-family: Consolas, monospace;
+           }
+           .jb-wrap {
+           padding: 100px 0px;
+           }
+           h1 {
+           padding: 14px 0px;
+           background-color: #20283E;
+           text-align: center;
+           color: #ffffff;
+           }
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js')
+    script.
+          $(document).ready(function(){
+              $("#submit").click(function(){
+                   if($("#gid").val().length==0){ alert("Group ID를 입력하세요."); $("#Name").focus(); return false; }
+                   if($("#pid").val().length==0){ alert("Patient ID를 입력하세요."); $("#Name").focus(); return false; }
+              });
+          });
+
+
+  body
+
+    style(type='text/css').
+      .layer {
+      position: static;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      font-size: 20px;
+      }
+      .layer .content {
+      display: inline-block;
+      vertical-align: middle
+      }
+      .layer .blank {
+         display: inline-block;
+         width: 0;
+         height: 100%;
+         vertical-align: middle
+         }
+
+
+    form(action='/login' method='post')
+
+        p
+
+          h1 Log In
+        p
+        p
+
+        .layer
+          span.blank
+          span.content
+
+              p
+                div(style='display: inline;') Group ID:
+                input(type='text' name='group_id' id="gid")
+              p
+                div(style='display: inline;') Patient ID:
+                input(type='text' name='patient_id' id="pid")
+
+              br
+              p
+                div(style='display: inline;') Start Date:
+                    input(type='date', name='startDate')
+                    div(style='display: inline;') ~ End Date:
+                      input(type='date', name='endDate')
+              br
+              span(style=' font-size:0.7em;  color: #20283E;') ✔  날짜를 지정하지 않는 경우 전체 데이터가 출력됩니다.
+              br
+              p
+                input(type='submit', id="submit")
+              br
+              br
+
+              table
+                script.
+                  var p_list=!{p_list};
+                  var g_list=!{g_list};
+                  document.write("<tr>");
+                  document.write("<td>GROUP ID </td>")
+                  document.write("<td>PATIENT ID </td>")
+
+                  document.write("</tr>");
+                  for (j = 1; j <= p_list.length; j++) {
+                      document.write("<tr>");
+                      document.write("<td>" + g_list[j] +"</td>");
+                      document.write("<td>" + p_list[j] +"</td>");
+                      document.write("</tr>");
+                    }
