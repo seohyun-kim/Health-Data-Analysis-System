@@ -15,6 +15,7 @@
 
 <br>  
 
-[작동 유뷰트 영상 보러가기](https://www.youtube.com/watch?v=nAmAixel37g)
+[작동 유뷰트 영상 보러가기](https://www.youtube.com/watch?v=nAmAixel37g)  
 
-![image](https://user-images.githubusercontent.com/61939286/126970545-fb0174dc-8abe-4cdb-acc2-bcfadad7be20.png)
+![image](https://user-images.githubusercontent.com/61939286/126972023-76b0ecb2-72a0-4e77-93ee-83fc4370d243.png)
+![image](https://user-images.githubusercontent.com/61939286/126971969-19f6b538-e821-4b0e-a375-88380a45eba2.png)
